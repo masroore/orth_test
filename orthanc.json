@@ -33,7 +33,7 @@
   "SslTrustedClientCertificates": "trustedClientCertificates.pem",
   "AuthenticationEnabled": true,
   "RegisteredUsers": {
-    "test": "test"
+    //"test": "test"
   },
   "DicomTlsEnabled": false,
   "DicomTlsRemoteCertificateRequired": true,
@@ -53,7 +53,6 @@
   "DicomScuPreferredTransferSyntax": "1.2.840.10008.1.2.1",
   "DicomThreadsCount": 4,
   "OrthancPeers": {},
-
   "OrthancPeersInDatabase": false,
   "HttpProxy": "",
   "HttpVerbose": false,
