@@ -30,10 +30,6 @@ services:
       DICOM_WEB_PLUGIN_ENABLED: "true"
       OHIF_PLUGIN_ENABLED: "true"
       VOLVIEW_PLUGIN_ENABLED: "true"
-      # DICOMWeb Plugin
-      - DW_ENABLED=true
-      # Postgres Plugin
-      - PG_ENABLED=true      
     restart:
       - always
     networks:
