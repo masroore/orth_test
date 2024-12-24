@@ -122,6 +122,6 @@
     "Port": 5432,
     "Database": "orthanc", // default database name in PostgreSQL container (no need to create it)
     "Username": "postgres", // default user name in PostgreSQL container (no need to create it)
-    "Password": "password"
+    "Password": "pgpassword"
   }
 }
