@@ -30,8 +30,7 @@ services:
       DICOM_WEB_PLUGIN_ENABLED: "true"
       OHIF_PLUGIN_ENABLED: "true"
       VOLVIEW_PLUGIN_ENABLED: "true"
-    restart:
-      - always
+    restart: always
     networks:
       - pacs
     depends_on:
@@ -48,8 +47,7 @@ services:
       - ${NGINX_DEFAULT_CONF}:/etc/nginx/conf.d/default.conf:ro
       - ${VIEWER_CONFIG}:/usr/share/nginx/html/app-config.js:ro
       - ./logo.png:/usr/share/nginx/html/logo.png:ro
-    restart: 
-      - always
+    restart: always      
     networks:
       - pacs
 
