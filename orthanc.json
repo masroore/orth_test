@@ -31,7 +31,7 @@
   "SslMinimumProtocolVersion": 4,
   "SslVerifyPeers": false,
   "SslTrustedClientCertificates": "trustedClientCertificates.pem",
-  "AuthenticationEnabled": true,
+  "AuthenticationEnabled": false,
   "RegisteredUsers": {
     //"test": "test"
   },
