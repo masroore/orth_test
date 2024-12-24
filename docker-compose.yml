@@ -1,12 +1,17 @@
 version: "3"
 services:
-  orthanc-db:
+  postgres:
     image: postgres
-    container_name: orthanc-db
-    environment:
-      POSTGRES_PASSWORD: "pg-password"
+    container_name: postgres
+    networks:
+      - pacs
     volumes:
-      - ./pg_sql:/var/lib/postgresql/data
+      - ${POSTGRES_DATA_MNT}:${PGDATA}
+    environment:
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - PGDATA=${PGDATA}
+      - POSTGRES_DB=${POSTGRES_DB}
 
   pacs:
     container_name: orthanc
@@ -15,21 +20,28 @@ services:
       - 8042:8042
       - 4242:4242
     volumes:
-      - ./orthanc.json:/etc/orthanc/orthanc.json:ro
-      - ./orthanc_db:/var/lib/orthanc/db/
+      # configuration file
+      - ${ORTHANC_CONFIG}:/etc/orthanc/orthanc.json:ro
+      # storage volume for raw dicoms
+      - ${ORTHANC_DB_MNT}:/var/lib/orthanc/db/
     environment:
       VERBOSE_ENABLED: "true"
       VERBOSE_STARTUP: "true"
       DICOM_WEB_PLUGIN_ENABLED: "true"
       OHIF_PLUGIN_ENABLED: "true"
       VOLVIEW_PLUGIN_ENABLED: "true"
-    restart: always
+      # DICOMWeb Plugin
+      - DW_ENABLED=true
+      # Postgres Plugin
+      - PG_ENABLED=true      
+    restart:
+      - always
     networks:
       - pacs
     depends_on:
-      - orthanc-db
+      - postgres
       
-  ohif_viewer:
+  ohif:
     container_name: ohif
     image: ohif/viewer
     ports:
@@ -40,7 +52,8 @@ services:
       - ./nginx_ohif.conf:/etc/nginx/conf.d/default.conf:ro
       - ./ohif.js:/usr/share/nginx/html/app-config.js:ro
       - ./logo.png:/usr/share/nginx/html/logo.png:ro
-    restart: always
+    restart: 
+      - always
     networks:
       - pacs
 

@@ -7,7 +7,10 @@
   "MaximumPatientCount": 0,
   "MaximumStorageCacheSize": 128,
   "LuaScripts": [],
-  "Plugins": ["/usr/share/orthanc/plugins", "/usr/local/share/orthanc/plugins"],
+  "Plugins": [
+    "/usr/share/orthanc/plugins",
+    "/usr/local/share/orthanc/plugins"
+  ],
   "ConcurrentJobs": 2,
   "HttpServerEnabled": true,
   "OrthancExplorerEnabled": true,
@@ -22,7 +25,9 @@
   "DicomCheckCalledAet": true,
   "DicomPort": 4242,
   "DefaultEncoding": "Latin1",
-  "AcceptedTransferSyntaxes": ["1.2.840.10008.1.*"],
+  "AcceptedTransferSyntaxes": [
+    "1.2.840.10008.1.*"
+  ],
   "UnknownSopClassAccepted": false,
   "DicomScpTimeout": 30,
   "RemoteAccessAllowed": true,
@@ -109,5 +114,14 @@
   "Warnings": {
     "W001_TagsBeingReadFromStorage": true,
     "W002_InconsistentDicomTagsInDb": true
+  },
+  "PostgreSQL": {
+    "EnableIndex": true,
+    "EnableStorage": false, // DICOM files are stored in the Orthanc container in /var/lib/orthanc/db/
+    "Host": "postgres", // the name of the PostgreSQL container
+    "Port": 5432,
+    "Database": "orthanc", // default database name in PostgreSQL container (no need to create it)
+    "Username": "postgres", // default user name in PostgreSQL container (no need to create it)
+    "Password": "password"
   }
 }
