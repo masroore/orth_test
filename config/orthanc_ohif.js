@@ -17,6 +17,25 @@ window.config = {
     option: 'never',
   },
 
+  whiteLabeling: {
+    /* Used to replace the default Logo */
+    createLogoComponentFn: function (React) {
+      return React.createElement("a", {
+        target: "_self",
+        rel: "noopener noreferrer",
+        className: "header-brand",
+        href: "/",
+        style: {
+          display: "block",
+          background: "url(/logo.png)",
+          backgroundSize: "contain",
+          backgroundRepeat: "no-repeat",
+          width: "200px",
+        },
+      });
+    },
+  },  
+
   // some windows systems have issues with more than 3 web workers
   maxNumberOfWebWorkers: 3,
   // below flag is for performance reasons, but it might not work for all servers
