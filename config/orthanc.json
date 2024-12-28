@@ -38,7 +38,7 @@
   "SslTrustedClientCertificates": "trustedClientCertificates.pem",
   "AuthenticationEnabled": false,
   "RegisteredUsers": {
-    //"test": "test"
+    "dicom": "letmein"
   },
   "DicomTlsEnabled": false,
   "DicomTlsRemoteCertificateRequired": true,
