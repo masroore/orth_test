@@ -11,6 +11,9 @@
     "/usr/share/orthanc/plugins",
     "/usr/local/share/orthanc/plugins"
   ],
+  "OHIF" : {
+    "UserConfiguration" : "/usr/local/share/orthanc/ohif.js"
+  }  
   "ConcurrentJobs": 8,
   "HttpServerEnabled": true,
   "OrthancExplorerEnabled": true,

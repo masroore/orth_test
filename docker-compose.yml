@@ -23,7 +23,7 @@ services:
       - ${ORTHANC_CONFIG:-./config/orthanc.json}:/etc/orthanc/orthanc.json:ro
       # storage volume for raw dicoms
       - ${ORTHANC_DB_MNT:-./orthanc_db}:/var/lib/orthanc/db
-      
+      - ${ORTHANC_OHIF:-./config/orthanc_ohif.js}:/usr/local/share/orthanc/ohif.js:ro
     environment:
       VERBOSE_ENABLED: "true"
       VERBOSE_STARTUP: "true"
