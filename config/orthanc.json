@@ -11,7 +11,7 @@
     "/usr/share/orthanc/plugins",
     "/usr/local/share/orthanc/plugins"
   ],
-  "ConcurrentJobs": 2,
+  "ConcurrentJobs": 8,
   "HttpServerEnabled": true,
   "OrthancExplorerEnabled": true,
   "HttpPort": 8042,
