@@ -20,9 +20,10 @@ services:
       - 4242:4242
     volumes:
       # configuration file
-      - ${ORTHANC_CONFIG}:/etc/orthanc/orthanc.json:ro
+      - ${ORTHANC_CONFIG:-./config/orthanc.json}:/etc/orthanc/orthanc.json:ro
       # storage volume for raw dicoms
-      - ${ORTHANC_DB_MNT}:/var/lib/orthanc/db/
+      - ${ORTHANC_DB_MNT:-./orthanc_db}:/var/lib/orthanc/db
+      
     environment:
       VERBOSE_ENABLED: "true"
       VERBOSE_STARTUP: "true"
