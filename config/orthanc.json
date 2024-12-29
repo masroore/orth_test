@@ -168,7 +168,7 @@
      * Enables/disables the button to download a screenshot of the
      * active viewport as a JPEG file.
      **/
-    "DownloadAsJpegEnabled": true,
+    "DownloadAsJpegEnabled": false,
 
     /**
      * Enables/disables the button to download the display study.
@@ -183,7 +183,7 @@
      * containing a human-readable hierarchy of folders (as generated
      * by the route "/studies/{id}/archive").
      **/
-    "DownloadDicomDir": false,
+    "DownloadDicomDir": true,
 
     /**
      * By setting option "InstitutionLogo" to an URL containing an
