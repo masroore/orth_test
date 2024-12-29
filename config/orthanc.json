@@ -168,7 +168,7 @@
      * Enables/disables the button to download a screenshot of the
      * active viewport as a JPEG file.
      **/
-    "DownloadAsJpegEnabled": false,
+    "DownloadAsJpegEnabled": true,
 
     /**
      * Enables/disables the button to download the display study.
@@ -190,7 +190,7 @@
      * image, this logo will be displayed at the bottom-left of the
      * Stone Web viewer.
      **/
-    "InstitutionLogo": "logo.png",
+    "InstitutionLogo": "http://pacs.mylabctg.com:8042/stone-webviewer/img/orthanc.png",
 
     /**
      * Whether to display the info panel at startup. Allowed values:
