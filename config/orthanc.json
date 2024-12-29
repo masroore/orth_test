@@ -212,6 +212,16 @@
      **/
     "ShowNotForDiagnosticUsageDisclaimer": false
   },
+  "DicomWeb": {
+    "Enable": true,
+    "MetadataWorkerThreadsCount": 10,
+    "StudiesMetadata": "MainDicomTags",
+    "SeriesMetadata": "MainDicomTags"
+  },
+  "OrthancExplorer2": {
+    "Enable": true,
+    "IsDefaultOrthancUI": true
+  },  
   "PostgreSQL": {
     "EnableIndex": true,
     "EnableStorage": false, // DICOM files are stored in the Orthanc container in /var/lib/orthanc/db/
