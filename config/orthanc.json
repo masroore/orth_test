@@ -152,7 +152,7 @@
      * image, this logo will be displayed at the bottom-left of the
      * Stone Web viewer.
      **/
-    "InstitutionLogo" : "",
+    "InstitutionLogo" : "logo.png",
   
     /**
      * Whether to display the info panel at startup. Allowed values:
