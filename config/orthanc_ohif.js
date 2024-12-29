@@ -11,7 +11,7 @@ window.config = {
     // Shows a custom route -access via http://localhost:3000/custom
     // helloPage: '@ohif/extension-default.customizationModule.helloPage',
   },
-  
+
   showStudyList: false,
   investigationalUseDialog: {
     option: 'never',
@@ -34,7 +34,54 @@ window.config = {
         },
       });
     },
-  },  
+  },
+
+  customizationService: {
+    cornerstoneOverlayTopLeft: {
+      id: 'cornerstoneOverlayTopLeft',
+      items: [
+        {
+          id: 'WindowLevel',
+          customizationType: 'ohif.overlayItem.windowLevel',
+        },
+        {
+          id: 'PatientName',
+          customizationType: 'ohif.overlayItem',
+          label: 'Pt:',
+          color: 'white',
+          condition: ({ instance }) =>
+            instance &&
+            instance.PatientName &&
+            instance.PatientName.Alphabetic,
+          contentF: ({ instance, formatters: { formatPN } }) => {
+            if (instance && instance.PatientName && instance.PatientName.Alphabetic) {
+              return formatPN(instance.PatientName.Alphabetic) + ' ' + (instance.PatientSex ? '(' + instance.PatientSex + ')' : '');
+            } else {
+              return 'N/A';
+            }
+          },
+        },
+        {
+          id: 'PatientAge',
+          customizationType: 'ohif.overlayItem',
+          label: 'Age:',
+          color: 'white',
+          title: "Patient's Age",
+          condition: ({ instance }) => instance && instance.PatientAge,
+          contentF: ({ instance }) => instance.PatientAge,
+        },
+        {
+          id: 'ID',
+          customizationType: 'ohif.overlayItem',
+          label: 'ID:',
+          color: 'white',
+          title: 'Patient PID',
+          condition: ({ instance }) => instance && instance.PatientID,
+          contentF: ({ instance }) => instance.PatientID,
+        },
+      ],
+    },
+  },
 
   // some windows systems have issues with more than 3 web workers
   maxNumberOfWebWorkers: 3,
