@@ -224,9 +224,17 @@
   },
   "DicomWeb": {
     "Enable": true,
+    "Host": "",
+    "Root": "/dicom-web/",
+    "PublicRoot": "/dicom-web/",
+    "EnableWado": true,
+    "WadoRoot": "/wado",
+    "Ssl": false,
+    "QidoCaseSensitive": true,
     "MetadataWorkerThreadsCount": 10,
-    "StudiesMetadata": "MainDicomTags",
-    "SeriesMetadata": "MainDicomTags"
+    "EnableMetadataCache": true,
+    "StudiesMetadata": "Full",
+    "SeriesMetadata": "Full"
   },
   "OrthancExplorer2": {
     "Enable": true,
