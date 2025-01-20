@@ -229,9 +229,11 @@
     "EnableWado": true,
     "WadoRoot": "/wado",
     "Ssl": false,
+    /*
     "Servers" : {
-      "sample" : [ "http://pacs.mylabctg.com:8042/dicom-web/" ]
-    }    
+      "main" : [ "http://pacs.mylabctg.com:8042/dicom-web/" ]
+    } 
+    */
     "QidoCaseSensitive": true,
     "MetadataWorkerThreadsCount": 10,
     "EnableMetadataCache": true,
