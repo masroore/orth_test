@@ -33,6 +33,7 @@
       "WindowCenter",
       "WindowWidth",
       "PhotometricInterpretation",
+      "BFSenderID",
       "PixelRepresentation"
     ],
     "Series": [
@@ -64,6 +65,7 @@
       "ConsultingPhysicianName",
       "ConsultingPhysicianIdentificationSequence",
       "RequestingPhysician",
+      "BFSenderID",
       "StationName"
     ],
     "Patient": [
@@ -147,7 +149,7 @@
   "LoadPrivateDictionary": true,
   "Dictionary" : {
     "0011,1060" : [ "LO", "InnowaveUploaderID", 1, 1, "InowavePrivateGroup"],
-    "1971,1020" : [ "LO", "RFSenderID", 1, 1, "RADFusion"]
+    "1971,1020" : [ "LO", "BFSenderID", 1, 1, "BlackFish"]
   },
   "SynchronousCMove": true,
   "JobsHistorySize": 10,
