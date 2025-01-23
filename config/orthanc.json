@@ -145,7 +145,10 @@
   "QueryRetrieveSize": 100,
   "CaseSensitivePN": false,
   "LoadPrivateDictionary": true,
-  "Dictionary": {},
+  "Dictionary" : {
+    "0011,1060" : [ "LO", "InnowaveUploaderID", 1, 1, "InowavePrivateGroup"]
+    "1971,1020" : [ "LO", "RFSenderID", 1, 1, "RADFusion"]
+  },
   "SynchronousCMove": true,
   "JobsHistorySize": 10,
   "SaveJobs": true,
